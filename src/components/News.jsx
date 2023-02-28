@@ -9,9 +9,8 @@ const News = () => {
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory: "Cryptocurrency",
   });
-  console.log(cryptoNews);
   if (!cryptoNews) {
-    return <div>Loading...</div>;
+    return <div>Fetching data...</div>;
   }
 
   return (

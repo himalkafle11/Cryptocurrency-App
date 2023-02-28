@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu, Typography, Avatar } from "antd";
-import { Link } from "react-router-dom";
+import { Link, Switch } from "react-router-dom";
 import {
   HomeOutlined,
   MoneyCollectOutlined,

@@ -3,20 +3,21 @@ import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
 import millify from "millify";
 import { useGetCryptosQuery } from "../services/cryptoApi";
+import Cryptocurrencies from "./Cryptocurrencies";
+import News from "./News";
 
 const { Title } = Typography;
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
 
   const globalStats = data?.data?.stats;
-  console.log(data);
 
   if (isFetching) return "loading...";
   return (
     <>
       <Title level={2} className="heading">
-        Global Crypto Stats
+        Global Crypto-Currency Status
       </Title>
       <Row>
         <Col span={12}>
@@ -47,6 +48,24 @@ const Homepage = () => {
           />
         </Col>
       </Row>
+      <div className="home-heading-container">
+        <Title level={2} className="home-title">
+          Top 10 Cryptos in the world
+        </Title>
+        <Title level={3} className="show-more">
+          <Link to="/cryptocurrencies">Show more</Link>
+        </Title>
+      </div>
+      <Cryptocurrencies simplified={true} />
+      <div className="home-heading-container">
+        <Title level={2} className="home-title">
+          Latest Crypto news
+        </Title>
+        <Title level={3} className="show-more">
+          <Link to="/news">Show more</Link>
+        </Title>
+      </div>
+      <News simplified />
     </>
   );
 };

@@ -23,17 +23,26 @@ const Cryptocurrencies = ({ simplified }) => {
   return (
     <>
       {!simplified && (
-        <div classname="search-crypto">
-          <Input
-            placeholder="Search Cryptocurrencies"
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
+        <>
+          <div classname="search-crypto">
+            <Input
+              placeholder="Search Cryptocurrencies"
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <h1 style={{ paddingTop: "24px" }}>Top 100 cryptocurrencies:</h1>
+        </>
       )}
 
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((currency) => (
-          <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
+          <Col
+            xs={24}
+            sm={12}
+            lg={6}
+            className="crypto-card"
+            key={currency.name}
+          >
             <a href={currency.coinrankingUrl} target="_blank" rel="noreferrer">
               <Card
                 title={`${currency.rank}. ${currency.name}`}

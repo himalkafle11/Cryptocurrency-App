@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Row, Col, Card } from "antd";
 
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import Loader from "./Loader";
 
 const { Title } = Typography;
 
@@ -10,7 +11,7 @@ const News = () => {
     newsCategory: "Cryptocurrency",
   });
   if (!cryptoNews) {
-    return <div>Fetching data...</div>;
+    return <Loader />;
   }
 
   return (

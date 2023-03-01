@@ -150,17 +150,24 @@ a:hover {
   margin-top: 0px !important;
 }
 .search-crypto {
-  margin: 20px auto 30px auto;
+  margin: 32px auto 32px auto;
   width: 250px;
 }
 .crypto-card-container {
   min-height: 65vh !important;
+  margin-top: 32px;
 }
 .crypto-card {
   min-width: 250px;
 }
 .crypto-card .crypto-image {
   width: 35px;
+}
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
 }
 
 .footer {

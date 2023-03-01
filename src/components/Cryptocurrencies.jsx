@@ -34,11 +34,7 @@ const Cryptocurrencies = ({ simplified }) => {
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((currency) => (
           <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
-            <a
-              href={currency.coinrankingUrl}
-              target="_blank"
-              rel="norelreferre"
-            >
+            <a href={currency.coinrankingUrl} target="_blank" rel="noreferrer">
               <Card
                 title={`${currency.rank}. ${currency.name}`}
                 extra={

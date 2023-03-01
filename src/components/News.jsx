@@ -25,7 +25,7 @@ const News = () => {
             {cryptoNews.map((news) => (
               <Col xs={24} sm={12} lg={8} key={news.url}>
                 <Card hoverable className="news-card">
-                  <a href={news.url} target="_blank" rel="noreferrer">
+                  <a href={news.url} target={"_blank"} rel="noreferrer">
                     <div className="news-container">
                       <Title className="news-title" level={4}>
                         {news.title}
